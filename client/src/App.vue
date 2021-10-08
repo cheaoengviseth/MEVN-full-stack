@@ -39,6 +39,7 @@
 
     <v-main>
       <router-view></router-view>
+      <loader></loader>
     </v-main>
   </v-app>
 </template>

@@ -34,21 +34,27 @@ export default {
           image: "",
       };
   },
+  state: { 
+      loader: false
+  },
+
   methods: {
       selectFile(file){
           this.image = file[0];
       },
       async submitForm(){
           const formData = new FormData();
-          formData.append('image',this.posts.image);
+          formData.append('image',this.image);
           formData.append('title', this.posts.title);
           formData.append('category', this.posts.category);
           formData.append('content', this.posts.content);
+          
           if(this.$refs.form.validate()){
               const response = await API.addPost(formData);
               this.$router.push({name: 'home', params: {message: response.message}});
           }
       },
-  }
+  },
+  
 };
 </script>
