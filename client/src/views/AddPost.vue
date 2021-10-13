@@ -34,10 +34,6 @@ export default {
           image: "",
       };
   },
-  state: { 
-      loader: false
-  },
-
   methods: {
       selectFile(file){
           this.image = file[0];
